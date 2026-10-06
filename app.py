@@ -72,9 +72,42 @@ st.markdown(
     """
     <style>
     [data-testid="stHeader"], [data-testid="stToolbar"], footer { display: none; }
-    [data-testid="stAppViewContainer"] .main .block-container {
+    [data-testid="stAppViewContainer"],
+    [data-testid="stMain"],
+    [data-testid="stMainBlockContainer"] {
+        width: 100%;
         max-width: none;
+        height: 100dvh;
+        min-height: 100dvh;
+        margin: 0;
         padding: 0;
+    }
+    [data-testid="stMain"] {
+        overflow: hidden;
+    }
+    [data-testid="stMainBlockContainer"] {
+        gap: 0;
+    }
+    [data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] {
+        gap: 0;
+    }
+    [data-testid="stElementContainer"]:has(> iframe[title="st.iframe"]) {
+        width: 100vw;
+        max-width: 100vw;
+        height: 100dvh;
+        margin: 0;
+        padding: 0;
+    }
+    iframe[title="st.iframe"] {
+        position: relative;
+        left: 50%;
+        display: block;
+        width: 100vw;
+        max-width: 100vw;
+        height: 100dvh;
+        min-height: 100dvh;
+        border: 0;
+        transform: translateX(-50%);
     }
     </style>
     """,
